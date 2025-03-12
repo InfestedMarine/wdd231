@@ -96,6 +96,11 @@ main {
     color: white;
 }
 
+.itm {
+    background: darkred;
+    color: white;
+}
+
 footer {
     background: #2d4863;
     color: white;
