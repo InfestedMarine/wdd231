@@ -1,0 +1,60 @@
+{
+  "businesses": [
+    {
+      "name": "Cyan's Bakery",
+      "address": "123 Main St, Metro City",
+      "phone": "123-456-7890",
+      "url": "https://cyansbakery.com",
+      "image": "images/bakery.jpg",
+      "membership": "Gold"
+    },
+    {
+     "name": "Tech Solutions",
+      "address": "456 Innovation Ave, Silicon Valley",
+      "phone": "987-654-3210",
+      "url": "https://techsolutions.com",
+      "image": "images/tech.jpg",
+      "membership": "Silver"
+    },
+    {
+      "name": "Green Earth Landscaping",
+      "address": "789 Garden Rd, Springfield",
+      "phone": "555-123-6789",
+      "url": "https://greenearth.com",
+      "image": "images/landscaping.jpg",
+      "membership": "Bronze"
+    },
+    {
+      "name": "Sunrise Café",
+      "address": "22 Breakfast Lane, Sunnyside",
+      "phone": "555-987-6543",
+      "url": "https://sunrisecafe.com",
+      "image": "images/cafe.jpg",
+      "membership": "Gold"
+    },
+    {
+      "name": "Ace Auto Repair",
+      "address": "88 Mechanic St, Detroit",
+      "phone": "444-789-1234",
+      "url": "https://aceautorepair.com",
+      "image": "images/auto.jpg",
+      "membership": "Silver"
+    },
+    {
+      "name": "Mountain Gear Outfitters",
+      "address": "777 Adventure Rd, Boulder",
+      "phone": "333-222-1111",
+      "url": "https://mountaingear.com",
+      "image": "images/gear.jpg",
+      "membership": "Gold"
+    },
+    {
+      "name": "Pixel Perfect Designs",
+      "address": "55 Creative Blvd, San Francisco",
+      "phone": "222-333-4444",
+      "url": "https://pixelperfect.com",
+      "image": "images/design.jpg",
+      "membership": "Bronze"
+    }
+  ]
+}

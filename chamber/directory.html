@@ -33,7 +33,11 @@
     </header>
     
     <section class="hero">
-        <div class="hero_image">Scalable, responsive hero image</div>
+        <div class="hero_image">
+        </div>
+        <div class="hero_text">
+            <h1>Hello Welcome to the Chamber</h1>
+        </div>
         <button class="hero_button">Keynote Tickets</button>
     </section>
     
@@ -60,27 +64,11 @@
         </section>
         
         <section class="businesses">
-            <div class="business_card">
-                <h3>Maria's Boutique</h3>
-                <p>Unique fashion and accessories for all styles.</p>
-                <p>Email: maria@boutique.com</p>
-                <p>Phone: (223) 555-6789</p>
-                <p>URL: www.mariasboutique.com</p>
-            </div>
-            <div class="business_card">
-                <h3>Diego Corp Solutions</h3>
-                <p>Providing corporate consulting and growth strategies.</p>
-                <p>Email: diego@diegocorp.com</p>
-                <p>Phone: (223) 555-4321</p>
-                <p>URL: www.diegocorp.com</p>
-            </div>
-            <div class="business_card">
-                <h3>Francisco's Community Services</h3>
-                <p>Helping new residents connect with local opportunities.</p>
-                <p>Email: francisco@communityconnect.com</p>
-                <p>Phone: (223) 555-9876</p>
-                <p>URL: www.communityconnect.com</p>
-            </div>
+            <div class="toggle-view">
+                <button id="grid">Grid</button>
+                <button id="list">List</button>
+              </div>
+            <div id="business-cards" class ="grid"></div>
         </section>
     </main>
     
@@ -89,9 +77,9 @@
         <p>Last modified: <span id="last-modified"></span></p>
         <img src="images/Flag_of_the_Philippines.jpg" alt="Phillipine_Flag">
         <div class="social">
-            <a href="#"><img src="youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/facebookIcon.png" alt="Facebook"></a>
+            <a href="#"><img src="images/xIcon.png" alt="X"></a>
+            <a href="#"><img src="images/instagramIcon.png" alt="Instagram"></a>
         </div>
     </footer>
 </body>
