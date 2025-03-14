@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #2c5034;
+    --secondary-color: #8E8B82;
+    --accent-color: #CDAA7D;
+    --background-color: #F8F5F0;
+    --text-color: #2C3E50;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+
+nav ul {    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.hero {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    text-align: center;
+    padding: 50px;
+    position: relative;
+}
+.hero_button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+main {
+    padding: 20px;
+}
+.info_sections {
+    display: flex;
+    gap: 20px;
+}
+.events, .weather, .forecast {
+    flex: 1;
+    background: var(--background-color);
+    padding: 15px;
+    border: 1px solid var(--secondary-color);
+}
+.businesses {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.business_card {
+    background: var(--accent-color);
+    padding: 15px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    color: white;
+}
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.social_icons {
+    margin-top: 10px;
+}
