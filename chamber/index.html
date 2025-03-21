@@ -15,7 +15,6 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,18 +53,16 @@
                 <div class="content_placeholder"></div>
             </div>
             <div class="weather">
+                <p>Loading...</p>
             </div>
             <div class="forecast">
+                <p>Loading...</p>
             </div>
         </section>
         
-        <section class="businesses">
-            <div class="toggle-view">
-                <button id="grid">Grid</button>
-                <button id="list">List</button>
-              </div>
-            <div id="business-cards" class ="grid"></div>
-        </section>
+        <section id="company_spotlight" class="spotlight_section">
+            <div class="spotlight_container"></div>
+          </section>
     </main>
     
     <footer>
@@ -79,4 +76,6 @@
         </div>
     </footer>
 </body>
+<script src="scripts.js" defer></script>
+
 </html>
