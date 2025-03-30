@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyan's Chamber of Commerce</title>
+
+    <meta name="description" content="The official join page and business hub for Cyan's Chamber of Commerce. Find local businesses, events, and opportunities.">
+    <meta name="author" content="Cyan D. Sanchez">
+
+    <meta property="og:title" content="Chamber's Join Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero.jpeg"> 
+    <meta property="og:url" content="https://infestedmarine.github.io/wdd231/chamber/directory.html"> 
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <header>
+        <div class="logo">
+            <img src="images/logo_chamber.png" alt="icon" width="50" height="50">
+            <h1>Chamber's Join Page</h1>
+        </div>
+        <nav>
+            <div class="menu-icon">&#9776;</div>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="directory.html">Directory</a></li>
+              <li><a href="join.html">Join</a></li>
+              <li><a href="discover.html">Discover</a></li>
+            </ul>
+          </nav>
+    </header>
+    <main>
+        <form id="membership-form" action="thankyou.html" method="get">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+            
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            
+            <label for="business-name">Business Name:</label>
+            <input type="text" id="business-name" name="business-name" required>
+            
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+            
+            <button type="submit">Submit</button>
+        </form>
+        
+        <section id="membership-levels">
+            <div class="membership-card bronze" onclick="openModal('bronze')">
+                <h3>Bronze</h3>
+                <p>Basic membership benefits</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="membership-card silver" onclick="openModal('silver')">
+                <h3>Silver</h3>
+                <p>Additional perks and event discounts</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="membership-card gold" onclick="openModal('gold')">
+                <h3>Gold</h3>
+                <p>Premium advertising and exposure</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="membership-card platinum" onclick="openModal('platinum')">
+                <h3>Platinum</h3>
+                <p>Exclusive benefits and training</p>
+                <a href="#">Learn More</a>
+            </div>
+        </section>
+        
+        <div id="bronze-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bronze')">&times;</span>
+                <h2>Bronze Membership</h2>
+                <p>Basic membership with community access and networking opportunities.</p>
+            </div>
+        </div>
+        
+        <div id="silver-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('silver')">&times;</span>
+                <h2>Silver Membership</h2>
+                <p>Includes event discounts and promotional opportunities.</p>
+            </div>
+        </div>
+        
+        <div id="gold-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('gold')">&times;</span>
+                <h2>Gold Membership</h2>
+                <p>Premium exposure and advertising options.</p>
+            </div>
+        </div>
+        
+        <div id="platinum-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('platinum')">&times;</span>
+                <h2>Platinum Membership</h2>
+                <p>Exclusive training and top-tier benefits.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&#9728; &copy; <span id="copyright-year"></span> Cyan D. Sanchez &#9728; Phillipines!</p>
+        <p>Last modified: <span id="last-modified"></span></p>
+        <img src="images/Flag_of_the_Philippines.jpg" alt="Phillipine_Flag">
+        <div class="social">
+            <a href="#"><img src="images/facebookIcon.png" alt="Facebook"></a>
+            <a href="#"><img src="images/xIcon.png" alt="X"></a>
+            <a href="#"><img src="images/instagramIcon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+    <script src="scripts.js" defer></script>
+</body>
+</html>
