@@ -44,7 +44,7 @@ function getQueryParams() {
         document.getElementById("email").textContent = formData.email || "N/A";
         document.getElementById("mobile").textContent = formData.mobile || "N/A";
         document.getElementById("business-name").textContent = formData.businessName || "N/A";
-        document.getElementById("org-title").textContent = formData.organizationTitle || "N/A";
+        document.getElementById("org-title").textContent = formData.orgTitle || "N/A";
         document.getElementById("business-description").textContent = formData.businessDescription || "N/A";
         document.getElementById("timestamp").textContent = formData.timestamp || "N/A";
 
