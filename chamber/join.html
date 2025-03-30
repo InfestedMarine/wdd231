@@ -38,26 +38,41 @@
     </header>
     <main>
         <form id="membership-form" action="thankyou.html" method="get">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" required>
-            
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="mobile">Mobile Number:</label>
-            <input type="tel" id="mobile" name="mobile" required>
-            
-            <label for="business-name">Business Name:</label>
-            <input type="text" id="business-name" name="business-name" required>
-            
-            <input type="hidden" id="timestamp" name="timestamp" value="">
-            
-            <button type="submit">Submit</button>
-        </form>
+            <label for="first-name">Applicant's First Name:</label>
+            <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Enter your first name" pattern="[A-Za-z\s-]{2,}">
         
+            <label for="last-name">Applicant's Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Enter your last name" pattern="[A-Za-z\s-]{2,}">
+        
+            <label for="org-title">Organizational Title:</label>
+            <input type="text" id="org-title" name="org-title" autocomplete="organization-title" title="Enter your title within the organization" pattern="[A-Za-z\s-]{7,}">
+        
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required autocomplete="email" title="Enter a valid email address" placeholder="example@email.com">
+        
+            <label for="mobile">Mobile Phone Number:</label>
+            <input type="tel" id="mobile" name="mobile" required autocomplete="tel" title="Enter a valid phone number" pattern="[0-9+\s()-]{10,}">
+        
+            <label for="business-name">Business/Organization Name:</label>
+            <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Enter the name of your business" pattern="[A-Za-z0-9\s-]{2,}">
+        
+            <label for="membership-level">Membership Level:</label>
+            <select id="membership-level" name="membership-level" required title="Select a membership level">
+                <option value="" disabled selected>Choose a membership level</option>
+                <option value="np">NP Membership (Non-Profit, No Fee)</option>
+                <option value="bronze">Bronze Membership</option>
+                <option value="silver">Silver Membership</option>
+                <option value="gold">Gold Membership</option>
+            </select>
+        
+            <label for="business-description">Business/Organization Description:</label>
+            <textarea id="business-description" name="business-description" title="Describe your business or organization"></textarea>
+        
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+        
+            <button type="submit">Submit Application</button>
+        </form>
+
         <section id="membership-levels">
             <div class="membership-card bronze" onclick="openModal('bronze')">
                 <h3>Bronze</h3>

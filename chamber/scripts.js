@@ -14,36 +14,49 @@ document.addEventListener("DOMContentLoaded", () => {
     getQueryParams();
 });
 
-// ** Form Handling & Redirect **
-document.getElementById("membership-form")?.addEventListener("submit", function(event) {
-    event.preventDefault();
-
+// Function to store form data in localStorage before submission
+document.getElementById("membership-form").addEventListener("submit", function () {
     const formData = {
         firstName: document.getElementById("first-name").value,
         lastName: document.getElementById("last-name").value,
         email: document.getElementById("email").value,
         mobile: document.getElementById("mobile").value,
         businessName: document.getElementById("business-name").value,
-        timestamp: new Date().toLocaleString()
+        orgTitle: document.getElementById("org-title").value,
+        membershipLevel: document.getElementById("membership-level").value,
+        businessDescription: document.getElementById("business-description").value,
+        timestamp: new Date().toISOString(),
     };
 
     localStorage.setItem("formData", JSON.stringify(formData));
-
-    window.location.href = "thankyou.html";
 });
-
 
 // ** Retrieve and Display Form Data from localStorage **
 function getQueryParams() {
     const storedData = localStorage.getItem("formData");
     if (storedData) {
         const formData = JSON.parse(storedData);
+
+        console.log("Retrieved form data:", formData); // Debugging step
+
         document.getElementById("first-name").textContent = formData.firstName || "N/A";
         document.getElementById("last-name").textContent = formData.lastName || "N/A";
         document.getElementById("email").textContent = formData.email || "N/A";
         document.getElementById("mobile").textContent = formData.mobile || "N/A";
         document.getElementById("business-name").textContent = formData.businessName || "N/A";
+        document.getElementById("org-title").textContent = formData.organizationTitle || "N/A";
+        document.getElementById("business-description").textContent = formData.businessDescription || "N/A";
         document.getElementById("timestamp").textContent = formData.timestamp || "N/A";
+
+        // Handle membership level selection
+        const membershipField = document.getElementById("membership-level");
+        if (membershipField) {
+            if (membershipField.tagName === "SELECT") {
+                membershipField.value = formData.membershipLevel || "";
+            } else {
+                membershipField.textContent = formData.membershipLevel || "N/A";
+            }
+        }
     }
 }
 
