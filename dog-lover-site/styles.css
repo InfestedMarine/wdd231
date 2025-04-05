@@ -1,0 +1,176 @@
+:root {
+    --primary-color: #255F38;        /* Main buttons, highlights */
+    --secondary-color: #1F7D53;      /* Hover states, secondary accents */
+    --accent-color: #27391C;         /* Navbar, headers */
+    --background-color: #18230F;     /* Page background or card background */
+    --text-color: #ffffff;           /* Light text for dark backgrounds */
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--accent-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Header */
+header {
+    padding: 30px 20px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 10px;            
+    padding: 1rem 2rem;             
+    background-color: #2f4429;      
+}
+
+.header-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.header-text {
+    text-align: right;
+}
+
+.header-nav button {
+    margin-right: 0.5rem; /* Space between buttons */
+    padding: 30px;
+    font-weight: bold;
+    background-color: #5c8a4d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.header-nav button:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .header-nav {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .header-text {
+        text-align: left;
+    }
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+/* Gallery */
+.dog-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.dog-card {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dog-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.dog-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.dog-card p {
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+/* Button Style */
+button {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+.info {
+    text-align: center;
+    
+}
