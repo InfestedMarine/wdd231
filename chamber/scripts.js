@@ -12,7 +12,83 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchBusinesses();
     toggleMenu();
     getQueryParams();
+    fetchLocations();
+    checkLastVisit();
+
 });
+
+// Fetch Location Data
+async function fetchLocations() {
+    try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        
+        const locationsContainer = document.getElementById('locations-grid');
+        if (!locationsContainer) {
+            console.error("Error: #locations-grid element not found.");
+            return;
+        }
+
+        data.locations.forEach(location => {
+            const card = document.createElement('div');
+            card.classList.add('location-card');
+            card.innerHTML = `
+                <h2>${location.name}</h2>
+                <figure>
+                    <img src="${location.image}" alt="${location.name}" />
+                </figure>
+                <address>${location.address}</address>
+                <p>${location.description}</p>
+                <button>Learn More</button>
+            `;
+            locationsContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.log('Error fetching location data:', error);
+    }
+}
+
+// Function to check the last visit and display the message
+function checkLastVisit() {
+    const lastVisit = localStorage.getItem('lastVisit');
+    const currentVisit = new Date();
+
+    if (!lastVisit) {
+        // First visit, display welcome message
+        displayVisitMessage("Welcome! Let us know if you have any questions.");
+    } else {
+        const lastVisitDate = new Date(lastVisit);
+        const timeDifference = Math.floor((currentVisit - lastVisitDate) / (1000 * 3600 * 24)); // Difference in days
+        
+        if (timeDifference < 1) {
+            // Visited within the last 24 hours
+            displayVisitMessage("Back so soon! Awesome!");
+        } else {
+            // Visited after more than a day
+            const daysText = timeDifference === 1 ? "day" : "days";
+            displayVisitMessage(`You last visited ${timeDifference} ${daysText} ago.`);
+        }
+    }
+
+    // Update the last visit date in localStorage
+    localStorage.setItem('lastVisit', currentVisit.toISOString());
+}
+
+// Function to display the visit message
+function displayVisitMessage(message) {
+    const sidebar = document.querySelector("#sidebar-content"); // Adjust selector to where you want the message displayed
+    
+    if (sidebar) {
+        const visitMessageDiv = document.createElement("div");
+        visitMessageDiv.classList.add("visit-message");
+        visitMessageDiv.innerHTML = `
+            <p>${message}</p>
+        `;
+        sidebar.appendChild(visitMessageDiv);
+    } else {
+        console.error("Sidebar not found.");
+    }
+}
 
 // Function to store form data in localStorage before submission
 document.getElementById("membership-form").addEventListener("submit", function () {

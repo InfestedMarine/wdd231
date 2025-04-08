@@ -411,3 +411,134 @@ form {
     font-size: 22px;
     cursor: pointer;
 }
+
+.visitor-message {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+/* Grid container styles */ 
+#locations-grid {
+    display: grid;
+    gap: 1rem; /* Reduced gap to improve layout efficiency */
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: var(--background-color);
+    grid-template-columns: 1fr; /* Single column for small screens */
+    grid-template-areas: 
+        "location1"
+        "location2"
+        "location3";
+}
+
+/* Location item styles */
+#locations-grid .location-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(44, 80, 52, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+}
+
+/* Hover effect for location item */
+#locations-grid .location-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(44, 80, 52, 0.12);
+    background-color: var(--accent-color);
+}
+
+/* Image styling */
+#locations-grid .location-card img {
+    width: 300px;  /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    display: block; /* Ensures the image behaves correctly */
+}
+
+/* Image hover effect */
+@media (min-width: 641px) {
+    #locations-grid .location-card img:hover {
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+}
+
+/* Heading styling */
+#locations-grid .location-card h2 {
+    font-size: 1.2rem;
+    margin: 0.75rem 0 0.25rem;
+    color: var(--primary-color);
+}
+
+/* Address styling */
+#locations-grid .location-card .location-address {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Description styling */
+#locations-grid .location-card .location-description {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+/* Button styling */
+#locations-grid .location-card button {
+    align-self: start;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Button hover effect */
+#locations-grid .location-card button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Grid Layouts */
+@media (max-width: 640px) {
+    #locations-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "location1"
+            "location2"
+            "location3";
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    #locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "location1 location2"
+            "location3 location4";
+    }
+}
+
+@media (min-width: 1025px) {
+    #locations-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "location1 location2 location3"
+            "location4 location5 location6"
+            "location7 location8 location9";
+    }
+}
