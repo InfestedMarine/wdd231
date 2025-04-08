@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchLocations();
 });
 
-// Fetch the JSON data for locations
 function fetchLocations() {
     const gridContainer = document.querySelector(".grid-container");
     if (!gridContainer) return;
@@ -24,10 +23,15 @@ function fetchLocations() {
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
-            gridContainer.innerHTML = ''; // Clear any existing content
+            if (!data.locations || data.locations.length === 0) {
+                gridContainer.innerHTML = '<p>No locations found.</p>';
+                return;
+            }
+
+            let gridContent = ''; // Initialize the grid content string
 
             data.locations.forEach(location => {
-                const card = `
+                gridContent += `
                     <div class="location-item">
                         <img src="${location.image}" alt="${location.name}" class="location-image" loading="lazy">
                         <h2 class="location-name">${location.name}</h2>
@@ -36,12 +40,15 @@ function fetchLocations() {
                         <p>LEARN MORE!</p>
                     </div>
                 `;
-                gridContainer.innerHTML += card;
             });
-        })
-        .catch(error => console.error("Error loading locations:", error));
-}
 
+            gridContainer.innerHTML = gridContent; // Update the grid content all at once
+        })
+        .catch(error => {
+            console.error("Error loading locations:", error);
+            gridContainer.innerHTML = '<p>Failed to load locations. Please try again later.</p>';
+        });
+}
 function displayLastVisitMessage() {
     const messageElement = document.getElementById("visitorMessage");
     if (!messageElement) return;
