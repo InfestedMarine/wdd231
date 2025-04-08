@@ -159,9 +159,12 @@ function getQueryParams() {
             } else {
                 membershipField.textContent = formData.membershipLevel || "N/A";
             }
-        }
+        }  
+        // Clear the form data from localStorage
+        localStorage.removeItem("formData");
     }
 }
+    
 
 // Menu Toggle
 function toggleMenu() {
