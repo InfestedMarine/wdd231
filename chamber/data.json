@@ -1,0 +1,52 @@
+{
+  "locations": [
+    {
+      "name": "San Agustin Church",
+      "address": "Gen. Luna St, Intramuros, Manila, 1002 Metro Manila, Philippines",
+      "description": "A UNESCO World Heritage Site and the oldest stone church in the Philippines, built in 1607. Known for its Baroque architecture and historical significance during the Spanish colonial period.",
+      "image": "images/san-agustin-church.webp"
+    },
+    {
+      "name": "The Ruins",
+      "address": "Talisay City, Negros Occidental, Philippines",
+      "description": "Remnants of a 1920s Italianate mansion built by Don Mariano Ledesma Lacson. Often called the 'Taj Mahal of the Philippines' and beautifully lit at night.",
+      "image": "images/the-ruins.webp"
+    },
+    {
+      "name": "Fort Santiago",
+      "address": "Intramuros, Manila, 1002 Metro Manila, Philippines",
+      "description": "A historic Spanish citadel built in 1571. It served as a defense fortress and prison, including for national hero José Rizal before his execution.",
+      "image": "images/fort-santiago.webp"
+    },
+    {
+      "name": "Taoist Temple",
+      "address": "Beverly Hills Subdivision, Cebu City, 6000 Cebu, Philippines",
+      "description": "Built in 1972 by Cebu's Chinese community, this temple features traditional Chinese architecture and offers panoramic views of the city.",
+      "image": "images/taoist-temple.webp"
+    },
+    {
+      "name": "Baclayon Church",
+      "address": "Baclayon, Bohol, Philippines",
+      "description": "One of the oldest churches in the Philippines, dating back to the early 1700s. Built using coral stones, it showcases Spanish Colonial architecture.",
+      "image": "images/baclayon-church.webp"
+    },
+    {
+      "name": "Ilocos Norte Capitol Building",
+      "address": "Laoag City, Ilocos Norte, Philippines",
+      "description": "A neoclassical government building constructed during the American period. It’s a symbol of Ilocos Norte’s political and cultural history.",
+      "image": "images/ilocos-norte-capitol.webp"
+    },
+    {
+      "name": "Malacañang Palace Museum",
+      "address": "JP Laurel Street, San Miguel, Manila, Philippines",
+      "description": "The official residence of the President of the Philippines. Kalayaan Hall now houses a museum showcasing presidential memorabilia and Philippine history.",
+      "image": "images/malacanang-palace.webp"
+    },
+    {
+      "name": "Casa Manila",
+      "address": "Plaza San Luis Complex, Intramuros, Manila, 1002 Metro Manila, Philippines",
+      "description": "A restored Spanish colonial house-turned-museum that illustrates upper-class Filipino life during the 19th century.",
+      "image": "images/casa-manila.webp"
+    }
+  ]
+}

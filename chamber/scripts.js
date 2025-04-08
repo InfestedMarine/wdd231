@@ -12,7 +12,65 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchBusinesses();
     toggleMenu();
     getQueryParams();
+    displayLastVisitMessage();
+    fetchLocations();
 });
+
+// Fetch the JSON data for locations
+function fetchLocations() {
+    const gridContainer = document.querySelector(".grid-container");
+    if (!gridContainer) return;
+
+    fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            gridContainer.innerHTML = ''; // Clear any existing content
+
+            data.locations.forEach(location => {
+                const card = `
+                    <div class="location-item">
+                        <img src="${location.image}" alt="${location.name}" class="location-image" loading="lazy">
+                        <h2 class="location-name">${location.name}</h2>
+                        <p class="location-address"><strong>📍 Address:</strong> ${location.address}</p>
+                        <p class="location-description">${location.description}</p>
+                        <p>LEARN MORE!</p>
+                    </div>
+                `;
+                gridContainer.innerHTML += card;
+            });
+        })
+        .catch(error => console.error("Error loading locations:", error));
+}
+
+function displayLastVisitMessage() {
+    const messageElement = document.getElementById("visitorMessage");
+    if (!messageElement) return;
+
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = Date.now();
+
+    if (lastVisit) {
+        const previousVisit = parseInt(lastVisit);
+        const msInADay = 1000 * 60 * 60 * 24;
+        const daysDiff = Math.floor((now - previousVisit) / msInADay);
+
+        let message = "";
+
+        if (daysDiff === 0) {
+            message = "Welcome back! You last visited <strong>today</strong>.";
+        } else if (daysDiff === 1) {
+            message = "Welcome back! It's been <strong>1 day</strong> since your last visit.";
+        } else {
+            message = `Welcome back! It's been <strong>${daysDiff} days</strong> since your last visit.`;
+        }
+
+        messageElement.innerHTML = `<p>${message}</p>`;
+    } else {
+        messageElement.innerHTML = "<p>Welcome! This is your <strong>first visit</strong>.</p>";
+    }
+
+    localStorage.setItem("lastVisit", now.toString());
+}
 
 // Function to store form data in localStorage before submission
 document.getElementById("membership-form").addEventListener("submit", function () {

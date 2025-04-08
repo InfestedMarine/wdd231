@@ -8,23 +8,25 @@
     <meta name="description" content="The official directory and business hub for Cyan's Chamber of Commerce. Find local businesses, events, and opportunities.">
     <meta name="author" content="Cyan D. Sanchez">
 
-    <meta property="og:title" content="Chamber's Directory">
+    <meta property="og:title" content="Chamber's Discover">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/hero.jpeg"> 
-    <meta property="og:url" content="https://infestedmarine.github.io/wdd231/chamber/directory.html"> 
+    <meta property="og:url" content="https://infestedmarine.github.io/wdd231/chamber/discover.html"> 
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="images/san-agustin-church.webp" as="image">
+    
     </head>
     <body>
     <header>
         <div class="logo">
             <img src="images/logo_chamber.png" alt="icon" width="50" height="50">
-            <h1>Chamber's Directory</h1>
+            <h1>Chamber's Discover</h1>
         </div>
         <nav>
             <div class="menu-icon">&#9776;</div>
@@ -37,17 +39,17 @@
           </nav>
     </header>
     <main>
-        
+        <section class="visitor-message" id="visitorMessage"></section>
+        <section class="grid-container">
     </main>
-    
     <footer>
         <p>&#9728; &copy; <span id="copyright-year"></span> Cyan D. Sanchez &#9728; Phillipines!</p>
         <p>Last modified: <span id="last-modified"></span></p>
         <img src="images/Flag_of_the_Philippines.jpg" alt="Phillipine_Flag">
         <div class="social">
-            <a href="#"><img src="images/facebookIcon.png" alt="Facebook"></a>
-            <a href="#"><img src="images/xIcon.png" alt="X"></a>
-            <a href="#"><img src="images/instagramIcon.png" alt="Instagram"></a>
+            <a href="#"><img src="images/facebookIcon.png" alt="Facebook" loading="lazy"></a>
+            <a href="#"><img src="images/xIcon.png" alt="X" loading="lazy"></a>
+            <a href="#"><img src="images/instagramIcon.png" alt="Instagram" loading="lazy"></a>
         </div>
     </footer>
     <script src="scripts.js" defer></script>
