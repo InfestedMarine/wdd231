@@ -422,8 +422,8 @@ form {
     font-size: 1rem;
 }
 
-/* Grid container styles */
-.grid-container {
+/* Grid container styles */ 
+#locations-grid {
     display: grid;
     gap: 1rem; /* Reduced gap to improve layout efficiency */
     margin: 2rem auto;
@@ -437,7 +437,7 @@ form {
 }
 
 /* Location item styles */
-.grid-container .location-item {
+#locations-grid .location-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -450,14 +450,14 @@ form {
 }
 
 /* Hover effect for location item */
-.grid-container .location-item:hover {
+#locations-grid .location-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(44, 80, 52, 0.12);
     background-color: var(--accent-color);
 }
 
 /* Image styling */
-.grid-container .location-item img {
+#locations-grid .location-card img {
     width: 300px;  /* Fixed width */
     height: 200px; /* Fixed height */
     object-fit: cover;
@@ -468,27 +468,27 @@ form {
 
 /* Image hover effect */
 @media (min-width: 641px) {
-    .grid-container .location-item img:hover {
+    #locations-grid .location-card img:hover {
         transform: scale(1.05); /* Slight zoom effect */
     }
 }
 
 /* Heading styling */
-.grid-container .location-item h2 {
+#locations-grid .location-card h2 {
     font-size: 1.2rem;
     margin: 0.75rem 0 0.25rem;
     color: var(--primary-color);
 }
 
 /* Address styling */
-.grid-container .location-item .location-address {
+#locations-grid .location-card .location-address {
     color: var(--text-color);
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
 }
 
 /* Description styling */
-.grid-container .location-item .location-description {
+#locations-grid .location-card .location-description {
     color: var(--text-color);
     font-size: 0.95rem;
     line-height: 1.4;
@@ -496,7 +496,7 @@ form {
 }
 
 /* Button styling */
-.grid-container .location-item button {
+#locations-grid .location-card button {
     align-self: start;
     padding: 0.6rem 1.2rem;
     background-color: var(--accent-color);
@@ -509,13 +509,13 @@ form {
 }
 
 /* Button hover effect */
-.grid-container .location-item button:hover {
+#locations-grid .location-card button:hover {
     background-color: var(--primary-color);
 }
 
 /* Responsive Grid Layouts */
 @media (max-width: 640px) {
-    .grid-container {
+    #locations-grid {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "location1"
@@ -525,7 +525,7 @@ form {
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-    .grid-container {
+    #locations-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
             "location1 location2"
@@ -534,7 +534,7 @@ form {
 }
 
 @media (min-width: 1025px) {
-    .grid-container {
+    #locations-grid {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
             "location1 location2 location3"
