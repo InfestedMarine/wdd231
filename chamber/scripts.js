@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     getQueryParams();
     fetchLocations();
     checkLastVisit();
-
 });
 
 // Fetch Location Data
@@ -48,46 +47,74 @@ async function fetchLocations() {
     }
 }
 
-// Function to check the last visit and display the message
+// Function to check and display the last visit date
 function checkLastVisit() {
     const lastVisit = localStorage.getItem('lastVisit');
     const currentVisit = new Date();
 
+    // Check if last visit exists
     if (!lastVisit) {
-        // First visit, display welcome message
+        // First visit: Display welcome message
         displayVisitMessage("Welcome! Let us know if you have any questions.");
     } else {
+        // Calculate the time difference
         const lastVisitDate = new Date(lastVisit);
-        const timeDifference = Math.floor((currentVisit - lastVisitDate) / (1000 * 3600 * 24)); // Difference in days
-        
-        if (timeDifference < 1) {
-            // Visited within the last 24 hours
+        const timeDiff = Math.floor((currentVisit - lastVisitDate) / (1000 * 3600 * 24)); // In days
+
+        if (timeDiff < 1) {
+            // Less than a day ago: Display "Back so soon!"
             displayVisitMessage("Back so soon! Awesome!");
+        } else if (timeDiff === 1) {
+            // Exactly one day ago
+            displayVisitMessage(`You last visited 1 day ago.`);
         } else {
-            // Visited after more than a day
-            const daysText = timeDifference === 1 ? "day" : "days";
-            displayVisitMessage(`You last visited ${timeDifference} ${daysText} ago.`);
+            // More than a day ago
+            displayVisitMessage(`You last visited ${timeDiff} days ago.`);
         }
     }
 
-    // Update the last visit date in localStorage
+    // Save the current visit date
     localStorage.setItem('lastVisit', currentVisit.toISOString());
 }
 
 // Function to display the visit message
 function displayVisitMessage(message) {
-    const sidebar = document.querySelector("#sidebar-content"); // Adjust selector to where you want the message displayed
-    
+    const sidebar = document.getElementById('sidebar-content');
     if (sidebar) {
-        const visitMessageDiv = document.createElement("div");
-        visitMessageDiv.classList.add("visit-message");
-        visitMessageDiv.innerHTML = `
-            <p>${message}</p>
-        `;
-        sidebar.appendChild(visitMessageDiv);
+        sidebar.innerHTML = `<p>${message}</p>`;
     } else {
-        console.error("Sidebar not found.");
+        console.log('Sidebar content area not found!');
     }
+}
+
+function displayLastVisitMessage() {
+    const messageElement = document.getElementById("visitorMessage");
+    if (!messageElement) return;
+
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = Date.now();
+
+    if (lastVisit) {
+        const previousVisit = parseInt(lastVisit);
+        const msInADay = 1000 * 60 * 60 * 24;
+        const daysDiff = Math.floor((now - previousVisit) / msInADay);
+
+        let message = "";
+
+        if (daysDiff === 0) {
+            message = "Welcome back! You last visited <strong>today</strong>.";
+        } else if (daysDiff === 1) {
+            message = "Welcome back! It's been <strong>1 day</strong> since your last visit.";
+        } else {
+            message = `Welcome back! It's been <strong>${daysDiff} days</strong> since your last visit.`;
+        }
+
+        messageElement.innerHTML = `<p>${message}</p>`;
+    } else {
+        messageElement.innerHTML = "<p>Welcome! This is your <strong>first visit</strong>.</p>";
+    }
+
+    localStorage.setItem("lastVisit", now.toString());
 }
 
 // Function to store form data in localStorage before submission
