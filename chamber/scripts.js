@@ -7,13 +7,13 @@ const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&un
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
 document.addEventListener("DOMContentLoaded", () => {
+    fetchLocations();
+    checkLastVisit();
     fetchWeather();
     fetchForecast();
     fetchBusinesses();
     toggleMenu();
     getQueryParams();
-    fetchLocations();
-    checkLastVisit();
 });
 
 // Fetch Location Data
