@@ -1,0 +1,36 @@
+{
+    "dogData": [
+        {
+            "breed": "Golden Retriever",
+            "grassImg": "images/grass-bg.webp",
+            "dogImg": "images/gr-dog1.webp",
+            "overlayImg": "images/dr-dog1-blank.webp",
+            "description": "A large friendly dog known for their loyalty and intelligence. They are great with kids and make excellent service animals, thriving on love and attention from their owners.",
+            "careDescription": "Golden Retrievers require regular exercise, grooming, and socialization. They thrive in homes with large yards and need to be active and mentally engaged to prevent boredom."
+        },
+        {
+            "breed": "German Shepherd",
+            "grassImg": "images/grass-bg.webp",
+            "dogImg": "images/gs-dog2.webp",
+            "overlayImg": "images/gs-dog2-blank.webp",
+            "description": "German Shepherds are highly intelligent, confident, and courageous dogs. They are often used in police and military work, but their affectionate nature makes them wonderful family pets as well.",
+            "careDescription": "German Shepherds need daily exercise and mental stimulation. Regular grooming is essential, and they benefit from obedience training to channel their energy positively."
+        },
+        {
+            "breed": "Beagle",
+            "grassImg": "images/grass-bg.webp",
+            "dogImg": "images/b-dog3.webp",
+            "overlayImg": "images/b-dog3-blank.webp",
+            "description": "Beagles are small to medium-sized dogs with a friendly, curious nature. Known for their keen sense of smell and boundless energy, they make great companions for families and active individuals.",
+            "careDescription": "Beagles need regular outdoor exercise and enjoy exploring. They should be kept on a leash during walks to avoid wandering due to their strong hunting instincts."
+        },
+        {
+            "breed": "Chihuahua",
+            "grassImg": "images/grass-bg.webp",
+            "dogImg": "images/c-dog4.webp",
+            "overlayImg": "images/c-dog4-blank.webp",
+            "description": "Chihuahuas are tiny dogs with huge personalities! Despite their small size, they are known for being bold, confident, and loyal, making them excellent companions for individuals and families alike.",
+            "careDescription": "Chihuahuas require minimal exercise but do benefit from daily walks and some playtime. They are prone to cold weather, so keeping them warm and cozy is essential."
+        }
+    ]
+}

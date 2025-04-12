@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="styles.css">
         <script src="scripts.js" defer></script>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <title>Cyan D. Sanchez | WDD 231</title>
         <meta name="Author" content="Cyan D. Sanchez">
@@ -16,38 +17,28 @@
     <body>
         <header>
             <div class="header-content">
-                <div class="header-nav">
-                    <button>Home</button>
-                    <button>Gallery</button>
-                </div>
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dog-finder.html">Dog Finder</a></li>
+                    </ul>
+                </nav>
                 <div class="header-text">
                     <h1>Dog Central</h1>
                     <p>Dog Lovers unite under a signal Banner!</p>
-                </div>
             </div>
         </header>
         <main>
-            <section class="dog-gallery">
-                <div class="dog-card">
-                    <img src="placeholder.jpg" alt="Cute Dog">
-                    <p>Insert Short Dog Information here</p>
-                    <button>Learn More</button>
+            <section class="dog-gallery" id="dogGallery">
+            </section>
+            <div id="dogModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <img id="modalImage" src="" alt="Dog Image">
+                    <p id="modalDescription"></p>
                 </div>
-                <div class="dog-card">
-                    <img src="placeholder.jpg" alt="Cute Dog">
-                    <p>Insert Short Dog Information here</p>
-                    <button>Learn More</button>
-                </div>
-                <div class="dog-card">
-                    <img src="placeholder.jpg" alt="Cute Dog">
-                    <p>Insert Short Dog Information here</p>
-                    <button>Learn More</button>
-                </div>
-                <div class="dog-card">
-                    <img src="placeholder.jpg" alt="Cute Dog">
-                    <p>Insert Short Dog Information here</p>
-                    <button>Learn More</button>
-                </div>
+            </div>
         </main>
         <footer>
         </footer>
